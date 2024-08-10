@@ -1,0 +1,10 @@
+.shelf h2 {
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+.shelfAlbums {
+    display: flex;
+    padding: 10px;
+}
+
