@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './HomePageAlbum.module.css';
 
 function HomePageAlbum({ album, width }) {
@@ -22,7 +23,7 @@ function HomePageAlbum({ album, width }) {
                     </div>
                     <div className={styles.albumArtists} style={{width: `${width - 10}px`}}>
                         {artists.map((artist, index) => (
-                            <p key={index}>{artist.Name}</p>
+                            <p key={index}><Link to={`/artist/${artist.ArtistID}`}>{artist.Name}</Link></p>
                         ))}
                     </div>
                     <div className={styles.albumType}>

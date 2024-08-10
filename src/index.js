@@ -7,6 +7,7 @@ import ShelfPage from './pages/shelfPage/ShelfPage';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ArtistPage from './pages/artistPage/ArtistPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/explore/:id" element={<ShelfPage />} />
+                <Route path="/artist/:id" element={<ArtistPage />}/>
             </Routes>
         </Router>
 
