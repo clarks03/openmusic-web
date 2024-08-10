@@ -6,14 +6,22 @@ import HomePage from './pages/homePage/HomePage';
 import ShelfPage from './pages/shelfPage/ShelfPage';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    {/* <HomePage /> */}
-    <ShelfPage index={0}/>
+    <React.StrictMode>
+        {/* <App /> */}
+        {/* <ShelfPage index={0}/> */}
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/explore/:id" element={<ShelfPage />} />
+            </Routes>
+        </Router>
 
-  </React.StrictMode>
+
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

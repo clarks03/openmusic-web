@@ -3,3 +3,8 @@
     margin-left: 5px;
     color: white;
 }
+
+.shelfHeader {
+    display: flex;
+    justify-content: space-between;
+}

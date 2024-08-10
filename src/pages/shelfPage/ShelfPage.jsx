@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import HomePageAlbum from '../../components/HomePageAlbum/HomePageAlbum';
 import styles from './ShelfPage.module.css';
 
-function ShelfPage({ index }) {
+function ShelfPage() {
     // let title = shelf.Title
     // let albums = shelf.Albums;
+    const { id } = useParams();
+
+    console.log(id);
 
     const [shelf, setShelf] = useState(null);
     const [numAlbums, setNumAlbums] = useState(Math.floor(window.innerWidth / 210));
@@ -16,7 +20,7 @@ function ShelfPage({ index }) {
             .then(response => response.json())
             .then(data => {
                 const shelvesArray = Object.values(data);
-                setShelf(shelvesArray[0][index]);
+                setShelf(shelvesArray[0][id]);
 
             })
             .catch(error => console.error('Error fetching albums:', error));
@@ -39,16 +43,19 @@ function ShelfPage({ index }) {
     // we need a grid with numAlbums columns.
 
     if (shelf) {
-    return (
-        <div className={styles.shelf}>
-            <h2>{shelf.Title}</h2>
-            <div className={styles.shelfAlbums} style={{display: `grid`, gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
-                {shelf.Albums.map((album) => (
-                    <HomePageAlbum album={album} width={width}/>
-                ))}
+        return (
+            <div className={styles.shelf}>
+                <div className={styles.shelfHeader}>
+                    <h2>{shelf.Title}</h2>
+                    <h2><Link to="/">Back</Link></h2>
+                </div>
+                <div className={styles.shelfAlbums} style={{display: `grid`, gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
+                    {shelf.Albums.map((album) => (
+                        <HomePageAlbum album={album} width={width}/>
+                    ))}
+                </div>
             </div>
-        </div>
-    );
+        );
     } else {
         return <h2>Loading...</h2>
     }

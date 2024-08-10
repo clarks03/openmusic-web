@@ -18,13 +18,17 @@ function HomePage() {
             .catch(error => console.error('Error fetching albums:', error));
     }, []);
 
-    return (
-        <div className={styles.main}>
-            {shelves ? shelves.map((shelf) => (
-                <HomePageShelf shelf={shelf} />
-            )) : <></>}
-        </div>
-    )
+    if (shelves) {
+        return (
+            <div className={styles.main}>
+                {shelves ? shelves.map((shelf, index) => (
+                    <HomePageShelf shelf={shelf} index={index}/>
+                )) : <></>}
+            </div>
+        );
+    } else {
+        return <h2>Loading...</h2>
+    }
 }
 
 export default HomePage;

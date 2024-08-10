@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import HomePageAlbum from '../../components/HomePageAlbum/HomePageAlbum';
 import styles from './HomePageShelf.module.css';
 
-function HomePageShelf({ shelf }) {
+function HomePageShelf({ shelf, index }) {
     let title = shelf.Title
     let albums = shelf.Albums;
 
@@ -33,7 +34,10 @@ function HomePageShelf({ shelf }) {
 
     return (
         <div className={styles.shelf}>
-            <h2>{title}</h2>
+            <div className={styles.shelfHeader}>
+                <h2>{title}</h2>
+                <h2><Link to={`/explore/${index}`}>View more</Link></h2>
+            </div>
             <div className={styles.shelfAlbums}>
                 {albums.slice(0, numAlbums).map((album) => (
                     <HomePageAlbum album={album} width={width}/>

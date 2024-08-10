@@ -3,6 +3,11 @@
     margin-left: 5px;
 }
 
+.shelfHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
 .shelfAlbums {
     display: flex;
     padding: 10px;
