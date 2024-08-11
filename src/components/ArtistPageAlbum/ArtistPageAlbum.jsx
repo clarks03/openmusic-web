@@ -14,7 +14,7 @@ function ArtistPageAlbum({ album, width }) {
     return (
         <div className={styles.album}>
             <Link to={`/album/${albumID}`}>
-                <img src={`http://lh3.googleusercontent.com/${artwork}`} style={{width: `${width}px`}}/>
+                <img src={`http://lh3.googleusercontent.com/${artwork}`} style={{width: `${width}px`, height: `${width}px`, objectFit: 'cover'}}/>
                 <p className={styles.albumTitle} style={{width: `${width - 10}px`}}>{title}</p>
                 <div className={styles.albumInfo} style={{width: `${width}px`}}>
                     <p>{year}</p>
