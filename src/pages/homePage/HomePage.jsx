@@ -33,10 +33,14 @@ function HomePage() {
         return (
             <div className={styles.main}>
                 <div className={styles.horiz}>
-                    <button onClick={handleBack}>Back</button>
-                    <button onClick={handleForward}>Forward</button>
-                    <h1>OpenMusic</h1>
-                    <h4><Link to='/search'>Search</Link></h4>
+                    <div style={{ display: 'flex', float: 'left' }} className={styles.horizButton}>
+                        <button onClick={handleBack}>&lt;</button>
+                        <button onClick={handleForward}>&gt;</button>
+                        <h1>OpenMusic</h1>
+                    </div>
+                    <div>
+                        <h4><Link to='/search'>Search</Link></h4>
+                    </div>
                 </div>
                 {shelves ? shelves.map((shelf, index) => (
                     <HomePageShelf shelf={shelf} index={index}/>

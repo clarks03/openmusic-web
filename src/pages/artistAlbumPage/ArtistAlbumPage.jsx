@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ArtistPageAlbum from "../../components/ArtistPageAlbum/ArtistPageAlbum";
 import styles from './ArtistAlbumPage.module.css';
 
@@ -10,6 +10,16 @@ function ArtistAlbumPage({ type }) {
     const [albums, setAlbums] = useState(null);
     const [numAlbums, setNumAlbums] = useState(Math.floor(window.innerWidth / 210));
     const [width, setWidth] = useState((window.innerWidth - 10 * numAlbums) / numAlbums);
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
+    const handleForward = () => {
+        navigate(1);
+    }
 
     useEffect(() => {
         // Fetch the particular shelf from Charlie's server :3
@@ -43,7 +53,11 @@ function ArtistAlbumPage({ type }) {
     if (albums && type === 'albums') {
         return (
             <div>
-                <h2>Albums</h2>
+                <div className={styles.button}>
+                    <button onClick={handleBack}>&lt;</button>
+                    <button onClick={handleForward}>&gt;</button>
+                    <h2>Albums</h2>
+                </div>
                 <div style={{display: 'grid', gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
                     {albums.map((album) => (
                         <ArtistPageAlbum album={album} width={width}/>
@@ -54,7 +68,11 @@ function ArtistAlbumPage({ type }) {
     } else if (albums && type === 'singles'){
         return (
             <div>
-                <h2>Singles</h2>
+                <div className={styles.button}>
+                    <button onClick={handleBack}>&lt;</button>
+                    <button onClick={handleForward}>&gt;</button>
+                    <h2>Singles</h2>
+                </div>
                 <div style={{display: 'grid', gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
                     {albums.map((album) => (
                         <ArtistPageAlbum album={album} width={width}/>

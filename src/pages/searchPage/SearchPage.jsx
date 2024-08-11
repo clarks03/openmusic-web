@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./SearchPage.module.css";
 import SearchPageArtist from "../../components/SearchPageArtist/SearchPageArtist";
 import SearchPageTrack from "../../components/SearchPageTrack/SearchPageTrack";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchPageAlbum from "../../components/SearchPageAlbum/SearchPageAlbum";
 
 function SearchPage() {
@@ -14,6 +14,16 @@ function SearchPage() {
 
     const [numAlbums, setNumAlbums] = useState(Math.floor(window.innerWidth / 210));
     const [width, setWidth] = useState((window.innerWidth - 10 * numAlbums) / numAlbums);
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
+    const handleForward = () => {
+        navigate(1);
+    }
 
 
     useEffect(() => {
@@ -122,7 +132,15 @@ function SearchPage() {
 
     return (
         <div>
-            <input type="text" value={query} onChange={handleInputChange} placeholder="Search..."/>
+            <div className={styles.header}>
+                <div>
+                    <button onClick={handleBack}>&lt;</button>
+                    <button onClick={handleForward}>&gt;</button>
+                </div>
+                <div>
+                    <input type="text" value={query} onChange={handleInputChange} placeholder="Search..."/>
+                </div>
+            </div>
             {searchTracks}
             {searchArtists}
             {searchAlbums}

@@ -10,3 +10,18 @@
     background-color: #555;
     border-radius: 10px;
 }
+
+.header {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.header button {
+    margin-right: 10px;
+    height: 25px;
+}
+
+.header input {
+    margin-left: 10px;
+}

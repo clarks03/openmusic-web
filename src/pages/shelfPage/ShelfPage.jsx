@@ -55,10 +55,11 @@ function ShelfPage() {
         return (
             <div className={styles.shelf}>
                 <div className={styles.shelfHeader}>
-                    <button onClick={handleBack}>Back</button>
-                    <button onClick={handleForward}>Forward</button>
-                    <h2 style={{marginBottom: '10px'}}>{shelf.Title}</h2>
-                    <h4 style={{marginBottom: '0', marginRight: '10px'}}><Link to="/">Back</Link></h4>
+                    <div style={{display: 'flex', float: 'left'}}>
+                        <button onClick={handleBack}>&lt;</button>
+                        <button onClick={handleForward}>&gt;</button>
+                        <h2 style={{marginBottom: '10px'}}>{shelf.Title}</h2>
+                    </div>
                 </div>
                 <div className={styles.shelfAlbums} style={{display: `grid`, gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
                     {shelf.Albums.map((album) => (

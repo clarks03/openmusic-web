@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import ArtistPageAlbum from '../../components/ArtistPageAlbum/ArtistPageAlbum';
 import ArtistPageTrack from '../../components/ArtistPageTrack/ArtistPageTrack';
 import styles from './ArtistPage.module.css';
@@ -14,12 +14,23 @@ function ArtistPage() {
 
     const { id } = useParams();
 
+    const navigate = useNavigate();
+
     const handleClick = () => {
         if (trackCount === 5) {
             setTrackCount(10);
         } else {
             setTrackCount(5);
         }
+    }
+
+    const handleBack = () => {
+        console.log("Hello")
+        navigate(-1);
+    }
+
+    const handleForward = () => {
+        navigate(1);
     }
 
     const commaify = (number) => {
@@ -50,6 +61,8 @@ function ArtistPage() {
     if (artist) {
         return (
             <div className={styles.artist}>
+                <button style={{ position: 'absolute', left: '10px', top: '30px', height: '25px'}} onClick={handleBack}>&lt;</button>
+                <button style={{ position: 'absolute', left: '40px', top: '30px', height: '25px'}} onClick={handleForward}>&gt;</button>
                 <div className={styles.artistHeader}>
                     <img src={`http://lh3.googleusercontent.com/${artist.Profile_Photo}`} className={styles.artistImage}/>
                     <h1>{artist.Name}</h1>

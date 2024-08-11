@@ -4,6 +4,19 @@ body {
 
 h2 {
     padding-left: 10px;
+
+}
+
+.artistHeader {
+    pointer-events: none;
+}
+
+
+.artistButton {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    cursor: pointer;
 }
 
 .artistHeader h1 {
