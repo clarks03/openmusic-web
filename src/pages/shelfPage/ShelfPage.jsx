@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import HomePageAlbum from '../../components/HomePageAlbum/HomePageAlbum';
 import styles from './ShelfPage.module.css';
 
@@ -7,6 +7,16 @@ function ShelfPage() {
     // let title = shelf.Title
     // let albums = shelf.Albums;
     const { id } = useParams();
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
+    const handleForward = () => {
+        navigate(1);
+    }
 
 
     const [shelf, setShelf] = useState(null);
@@ -45,6 +55,8 @@ function ShelfPage() {
         return (
             <div className={styles.shelf}>
                 <div className={styles.shelfHeader}>
+                    <button onClick={handleBack}>Back</button>
+                    <button onClick={handleForward}>Forward</button>
                     <h2 style={{marginBottom: '10px'}}>{shelf.Title}</h2>
                     <h4 style={{marginBottom: '0', marginRight: '10px'}}><Link to="/">Back</Link></h4>
                 </div>

@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 import HomePageShelf from '../../layouts/homePageShelf/HomePageShelf';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function HomePage() {
 
     const [shelves, setShelves] = useState(null);
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate(-1);
+    }
+
+    const handleForward = () => {
+        navigate(1);
+    }
 
     useEffect(() => {
         // Fetch the shelves from Charlie's server :3
@@ -23,6 +33,8 @@ function HomePage() {
         return (
             <div className={styles.main}>
                 <div className={styles.horiz}>
+                    <button onClick={handleBack}>Back</button>
+                    <button onClick={handleForward}>Forward</button>
                     <h1>OpenMusic</h1>
                     <h4><Link to='/search'>Search</Link></h4>
                 </div>

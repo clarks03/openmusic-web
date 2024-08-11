@@ -27,6 +27,10 @@
     color: #aaa;
 }
 
+.trackTwoHoriz p {
+    margin-right: 5px;
+}
+
 .track:hover {
     background-color: #555;
     cursor: pointer;
