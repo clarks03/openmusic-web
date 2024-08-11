@@ -48,9 +48,9 @@
 }
 
 .albumTitle {
-    display: inline-block;
+    /* display: inline-block; */
     font-weight: bold;
-    color: white;
+    /* color: white; */
 
     text-overflow: "...";
     overflow: hidden;
@@ -80,4 +80,23 @@
 .albumType p {
     padding-left: 5px;
     padding-right: 5px;
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff
+}
+
+.albumArtists a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.album:hover {
+    text-decoration: none;
 }

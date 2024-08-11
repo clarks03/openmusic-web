@@ -13,3 +13,7 @@
     padding: 10px;
 }
 
+.shelfHeader a:hover {
+    color: #fff;
+    text-decoration: underline;
+}

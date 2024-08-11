@@ -8,6 +8,9 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ArtistPage from './pages/artistPage/ArtistPage';
+import ArtistAlbumPage from './pages/artistAlbumPage/ArtistAlbumPage';
+import AlbumPage from './pages/albumPage/AlbumPage';
+import SearchPage from './pages/searchPage/SearchPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +22,10 @@ root.render(
                 <Route path="/" element={<HomePage />} />
                 <Route path="/explore/:id" element={<ShelfPage />} />
                 <Route path="/artist/:id" element={<ArtistPage />}/>
+                <Route path="/artist/:id/albums" element={<ArtistAlbumPage type={'albums'} />}/>
+                <Route path="/artist/:id/singles" element={<ArtistAlbumPage type={'singles'} />}/>
+                <Route path="/album/:id" element={<AlbumPage />} />
+                <Route path="/search" element={<SearchPage />}/>
             </Routes>
         </Router>
 

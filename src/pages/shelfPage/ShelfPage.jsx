@@ -8,7 +8,6 @@ function ShelfPage() {
     // let albums = shelf.Albums;
     const { id } = useParams();
 
-    console.log(id);
 
     const [shelf, setShelf] = useState(null);
     const [numAlbums, setNumAlbums] = useState(Math.floor(window.innerWidth / 210));
@@ -46,8 +45,8 @@ function ShelfPage() {
         return (
             <div className={styles.shelf}>
                 <div className={styles.shelfHeader}>
-                    <h2>{shelf.Title}</h2>
-                    <h2><Link to="/">Back</Link></h2>
+                    <h2 style={{marginBottom: '10px'}}>{shelf.Title}</h2>
+                    <h4 style={{marginBottom: '0', marginRight: '10px'}}><Link to="/">Back</Link></h4>
                 </div>
                 <div className={styles.shelfAlbums} style={{display: `grid`, gridTemplateColumns: `repeat(${numAlbums}, 1fr)`}}>
                     {shelf.Albums.map((album) => (

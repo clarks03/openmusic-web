@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './HomePage.module.css';
 import HomePageShelf from '../../layouts/homePageShelf/HomePageShelf';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
 
@@ -21,6 +22,10 @@ function HomePage() {
     if (shelves) {
         return (
             <div className={styles.main}>
+                <div className={styles.horiz}>
+                    <h1>OpenMusic</h1>
+                    <h4><Link to='/search'>Search</Link></h4>
+                </div>
                 {shelves ? shelves.map((shelf, index) => (
                     <HomePageShelf shelf={shelf} index={index}/>
                 )) : <></>}

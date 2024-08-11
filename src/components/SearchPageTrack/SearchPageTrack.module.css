@@ -1,0 +1,42 @@
+.track {
+    display: grid;
+    grid-template-columns: 60px auto 60px;
+}
+
+.track img {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.trackOne {
+    margin-left: 10px;
+}
+
+.trackTwo {
+    align-items: center;
+    margin-top: 5px;
+}
+
+.trackTwo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.trackTwoHoriz {
+    display: flex;
+    color: #aaa;
+}
+
+.track:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.track a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.track a {
+    color: #aaa;
+}

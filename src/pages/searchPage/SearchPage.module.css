@@ -1,0 +1,12 @@
+.searchArtists {
+    display: flex;
+}
+
+.searchAlbums {
+    display: flex;
+}
+
+.searchAlbums a:hover {
+    background-color: #555;
+    border-radius: 10px;
+}

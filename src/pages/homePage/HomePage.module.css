@@ -9,3 +9,21 @@ body {
     color: white;
     height: 100%;
 }
+
+.horiz {
+    display: flex;
+    justify-content: space-between;
+}
+
+.horiz h1 {
+    padding-left: 10px;
+}
+
+.horiz h4 {
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.horiz a:hover {
+    text-decoration: underline;
+}

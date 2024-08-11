@@ -1,0 +1,24 @@
+.album {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.album img {
+    border-radius: 10px;
+}
+
+.album p {
+    margin: 0;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.albumHoriz {
+    display: flex;
+}
+
+.albumHoriz p {
+    margin-right: 5px;
+    margin-top: 7px;
+    color: #aaa;
+}

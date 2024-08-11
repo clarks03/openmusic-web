@@ -1,0 +1,85 @@
+.albumHeaderArtwork {
+    display: flex;
+}
+
+.albumHeaderArtwork img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    margin: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.albumInfo {
+    padding: 0;
+    margin: 0;
+}
+
+.albumInfo p {
+    margin-top: 105px;
+}
+
+.albumInfo h1 {
+    margin: 0;
+}
+
+.albumInfoCreator {
+    display: flex;
+}
+
+.albumInfoCreator img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 13px;
+    margin: 0;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+.albumInfoCreator p {
+    margin-top: 24px;
+    margin-left: 5px;
+    color: #ddd;
+}
+
+.albumInfoCreator a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.albumInfoCreator a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.albumTrackHeader {
+    display: grid;
+    grid-template-columns: 75px 500px auto auto;
+    color: #aaa;
+
+    margin: 0;
+    padding: 0;
+}
+
+.albumTitle {
+    text-overflow: "...";
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+.albumTrackHeaderOne {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.albumTrackHeaderThree {
+    text-align: right;
+    margin-right: 7px;
+}
+
+.albumTrackHeaderFour {
+    text-align: right;
+    margin-right: 30px;
+}

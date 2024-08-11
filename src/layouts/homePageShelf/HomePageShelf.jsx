@@ -36,11 +36,11 @@ function HomePageShelf({ shelf, index }) {
         <div className={styles.shelf}>
             <div className={styles.shelfHeader}>
                 <h2>{title}</h2>
-                <h2><Link to={`/explore/${index}`}>View more</Link></h2>
+                <h4 style={{padding: '0', marginBottom: '0', marginRight: '10px'}}><Link to={`/explore/${index}`}>View more</Link></h4>
             </div>
             <div className={styles.shelfAlbums}>
                 {albums.slice(0, numAlbums).map((album) => (
-                    <HomePageAlbum album={album} width={width}/>
+                    <HomePageAlbum album={album} width={width-(10/numAlbums)}/>
                 ))}
             </div>
         </div>

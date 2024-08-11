@@ -1,0 +1,56 @@
+.track {
+    display: grid;
+    grid-template-columns: 50px 500px auto auto;
+}
+
+.track:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.columnOne {
+    padding-right: 15px;
+    text-align: right;
+    color: #aaa;
+}
+
+
+.columnTwo {
+    display: flex;
+    justify-content: left;
+}
+
+.columnTwo img {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.columnTwo p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space-collapse: discard;
+    padding-left: 10px;
+}
+
+.columnTwo {
+    align-items: center;
+}
+
+.columnTwoTitle p {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.explicit {
+    color: #aaa;
+}
+
+.columnThree {
+    text-align: right;
+}
+
+.columnFour {
+    text-align: right;
+    padding-right: 30px;
+}
