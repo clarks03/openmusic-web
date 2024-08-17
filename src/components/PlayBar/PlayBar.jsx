@@ -13,6 +13,7 @@ function PlayBar() {
 
     useEffect(() => {
         if (currentTrack) {
+            // TODO: maybe make this iterate over all remaining tracks in the album?
             let playbackID = (currentTrack.Playback_Clean) ? currentTrack.Playback_Clean : currentTrack.Playback_Explicit;
             fetch(`https://server.openmusic.app/playback?id=${playbackID}`)
                 .then(response => response.json())
