@@ -14,7 +14,7 @@ function HomePageAlbum({ album, width }) {
         <div className={styles.album} style={{width: `${width}px`}}>
             <Link to={`/album/${albumID}`}>
                 <div className={styles.albumArtwork}>
-                    <img src={artwork} alt="hello"/>
+                    <img src={artwork} style={{height: `${width}px`, objectFit: 'cover'}} alt="hello"/>
                 </div>
                 <div className={styles.albumInfoBackground} style={{backgroundImage: `url(${artwork})`, width: `${width}px`}}> 
                     <div className={styles.albumInfo}>
