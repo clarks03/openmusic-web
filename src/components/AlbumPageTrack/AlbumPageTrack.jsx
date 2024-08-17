@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { PlayBarContext } from "../../contexts/PlayBarContext";
 import styles from "./AlbumPageTrack.module.css";
 
 function AlbumPageTrack({ track }) {
+
+    const { setCurrentTrack } = useContext(PlayBarContext);
 
     let title = track.Title;
     let index = track.Index;
@@ -32,8 +35,12 @@ function AlbumPageTrack({ track }) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    const handleClick = () => {
+        setCurrentTrack(track);
+    }
+
     return (
-        <div className={styles.track}>
+        <div className={styles.track} onClick={handleClick}>
             <p className={styles.columnOne}>{index}</p>
             <div className={styles.columnTwo}>
                 <p>{title}</p>

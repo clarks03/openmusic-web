@@ -5,6 +5,11 @@
     margin-bottom: 10px;
 }
 
+.track:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
 .columnOne {
     text-align: right;
     margin-right: 20px;
